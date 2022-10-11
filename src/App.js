@@ -1,5 +1,4 @@
 import ContainerResize from "./components/ContainerResize/ContainerResize";
-import PostViewer from "./components/PostViewer/PostViewer";
 import './index.scss'
 
 function App() {

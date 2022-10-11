@@ -15,8 +15,16 @@ const ContainerResize = () => {
         setInitialPos(e.clientX);
         setInitialSize(resizable.offsetWidth);
     }
+
+    const resizeLeft = (e) => {
+        
+        let resizable = document.getElementById('Resizable');
+      
+        resizable.style.width = `${parseInt(initialSize) - parseInt(e.clientX - initialPos)}px`;
+      
+    }
     
-    const resize = (e) => {
+    const resizeRight = (e) => {
         
         let resizable = document.getElementById('Resizable');
       
@@ -26,6 +34,12 @@ const ContainerResize = () => {
 
     return(
         <div className="containerResize">
+            <div 
+                id="Draggable"
+                draggable = "true"
+                onDragStart = {initial} 
+                onDrag = {resizeLeft}
+            />
             <div id="Resizable"> 
                 <PostViewer />
             </div>
@@ -33,7 +47,7 @@ const ContainerResize = () => {
                 id="Draggable"
                 draggable = "true"
                 onDragStart = {initial} 
-                onDrag = {resize}
+                onDrag = {resizeRight}
             />
         </div>
     ); 

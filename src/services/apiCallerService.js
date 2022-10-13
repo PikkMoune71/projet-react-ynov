@@ -14,31 +14,40 @@ class ApiCallerService {
         this.baseUrl = baseUrl;
     }
 
-    getPost(idPost) {
+    async getPost(idPost) {
         var response = ""
-        axios({
+
+        const config = {
+            headers: {
+                // Add any auth token here
+                'Authorization': 'Bearer ' + this.token,
+            }
+        }
+    
+        //let res = await axios(config).then(res => console.log(res))
+        try{
+            const res = await axios.get(this.computeUrl(idPost), config)
+            console.log(res);
+        }catch(err){
+            console.log(err)
+        }
+
+        /*axios({
 
             // Endpoint to send files
             url: this.computeUrl(idPost),
             method: "GET",
-            mode: 'no-cors',
-            withCredentials: false,
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*',
-                'Access-Control-Allow-Credentials': 'false',
-                'Accept': '*/*',
                 // Add any auth token here
                 Authorization: 'Bearer ' + this.token,
             }
         }).then((res) => {
-            console.log(res);
-            response = res;
+            console.log(resolve(res));
+            //response = res;
         })
             .catch((err) => { console.log(err) });
 
-        //return this.mapResponse(response)
+        //return this.mapResponse(response)*/
     }
 
     computeUrl(idPost) {

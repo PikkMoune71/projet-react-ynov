@@ -23,6 +23,7 @@ Saisir la commande ``npm start`` pour lancer le projet.
 * [React JS](https://fr.reactjs.org/) - Langage utilisé
 * [Axios](https://axios-http.com/) - Client HTTP permettant de faciliter l'envoi de requêtes aux API
 * [L'API Twitter](https://developer.twitter.com/) - API permettant de récupérer le contenu des Tweets
+* [Sass](https://sass-lang.com/) - Langage de script permettant de compiler du CSS
 
 ## Architecture générale
 

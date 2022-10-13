@@ -1,10 +1,18 @@
+
+import ContentPostViewer from "./ContentPostViewer/ContentPostViewer";
+import FooterPostViewer from "./FooterPostViewer/FooterPostViewer";
 import HeaderPostViewer from "./HeaderPostViewer/HeaderPostViewer";
+
 import './PostViewer.scss'
 
-export default function PostViewer() {
+const PostViewer = () => {
   return (
-    <div className="container">
-        <HeaderPostViewer />
+    <div className="container" id="container">
+      <HeaderPostViewer />
+      <ContentPostViewer />
+      <FooterPostViewer />
     </div>
   )
 }
+
+export default PostViewer

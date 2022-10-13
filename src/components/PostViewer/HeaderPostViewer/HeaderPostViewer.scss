@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
 
     .icon-profil{ 
         img{
@@ -19,7 +19,7 @@
             font-weight: 600;
         }
         .pseudo{
-            color: rgb(107, 107, 107);
+            color: rgb(133, 133, 133);
         }
     }
 }

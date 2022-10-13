@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import PostViewer from '../PostViewer/PostViewer';
 import './ContainerResize.scss'
 
@@ -7,29 +7,20 @@ const ContainerResize = () => {
 
     const [initialPos,   setInitialPos] = useState(null);
     const [initialSize, setInitialSize] = useState(null);
-  
+    const resizable = useRef(null);
+    
     const initial = (e) => {
-        
-        let resizable = document.getElementById('Resizable');
-        
         setInitialPos(e.clientX);
-        setInitialSize(resizable.offsetWidth);
-    }
-
-    const resizeLeft = (e) => {
-        
-        let resizable = document.getElementById('Resizable');
-      
-        resizable.style.width = `${parseInt(initialSize) - parseInt(e.clientX - initialPos)}px`;
-      
+        setInitialSize(resizable.current.offsetWidth);
+        console.log(resizable.current.offsetWidth)
     }
     
+    const resizeLeft = (e) => {
+        resizable.current.style.width = `${parseInt(initialSize) - parseInt(e.clientX - initialPos)}px`;
+    }
+
     const resizeRight = (e) => {
-        
-        let resizable = document.getElementById('Resizable');
-      
-        resizable.style.width = `${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`;
-      
+        resizable.current.style.width = `${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`;
     }
 
     return(
@@ -40,7 +31,7 @@ const ContainerResize = () => {
                 onDragStart = {initial} 
                 onDrag = {resizeLeft}
             />
-            <div id="Resizable"> 
+            <div id="Resizable" ref={resizable}> 
                 <PostViewer />
             </div>
             <div 

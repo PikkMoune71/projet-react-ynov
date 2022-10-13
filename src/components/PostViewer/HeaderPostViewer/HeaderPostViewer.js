@@ -1,7 +1,7 @@
 import icon from '../../../assets/img/logo192.png'
 import './HeaderPostViewer.scss'
 
-export default function HeaderPostViewer() {
+const HeaderPostViewer = () => {
   return (
     <div className="headerContainer">
         <div className="icon-profil">
@@ -14,3 +14,5 @@ export default function HeaderPostViewer() {
     </div>
   )
 }
+
+export default HeaderPostViewer

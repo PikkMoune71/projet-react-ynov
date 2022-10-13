@@ -9,3 +9,8 @@ body{
     font-family: 'Open Sans';
     background-color: hsl(220, 20%, 17%);
 }
+
+.dark {
+    background-image: linear-gradient(150deg, rgb(95, 108, 138), rgb(48, 59, 94), rgb(14, 18, 38)); 
+    color:#fff;
+}

@@ -17,10 +17,11 @@ class ApiCallerService {
     async getPost(idPost) {
         var response = ""
 
-        const config = {
+        /*const config = {
             headers: {
                 // Add any auth token here
                 'Authorization': 'Bearer ' + this.token,
+                "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json"
             }
         }
     
@@ -30,7 +31,15 @@ class ApiCallerService {
             console.log(res);
         }catch(err){
             console.log(err)
-        }
+        }*/
+
+        fetch(this.computeUrl(idPost), { 
+            method: 'get', 
+            headers: new Headers({
+                'Authorization': 'Bearer ' + this.token, 
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }), 
+        }).then(res => console.log(res))
 
         /*axios({
 

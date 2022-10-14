@@ -17,46 +17,23 @@ class ApiCallerService {
     async getPost(idPost) {
         var response = ""
 
-        /*const config = {
+        const config = {
             headers: {
                 // Add any auth token here
                 'Authorization': 'Bearer ' + this.token,
                 "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json"
             }
         }
-    
-        //let res = await axios(config).then(res => console.log(res))
+
+        var res;
+
         try{
-            const res = await axios.get(this.computeUrl(idPost), config)
-            console.log(res);
+            res = await axios.get(this.computeUrl(idPost), config)
         }catch(err){
-            console.log(err)
-        }*/
+            res = ""
+        }
 
-        fetch(this.computeUrl(idPost), { 
-            method: 'get', 
-            headers: new Headers({
-                'Authorization': 'Bearer ' + this.token, 
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }), 
-        }).then(res => console.log(res))
-
-        /*axios({
-
-            // Endpoint to send files
-            url: this.computeUrl(idPost),
-            method: "GET",
-            headers: {
-                // Add any auth token here
-                Authorization: 'Bearer ' + this.token,
-            }
-        }).then((res) => {
-            console.log(resolve(res));
-            //response = res;
-        })
-            .catch((err) => { console.log(err) });
-
-        //return this.mapResponse(response)*/
+        return this.mapResponse(res)
     }
 
     computeUrl(idPost) {

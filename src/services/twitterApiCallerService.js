@@ -6,7 +6,7 @@ class TwitterApiCallerService extends ApiCallerService {
     }
 
     mapResponse(response) {
-        throw new Error("Method 'mapResponse()' must be implemented.");
+        return response
     }
 }
 

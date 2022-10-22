@@ -1,24 +1,24 @@
-.btn-navbar-card{
+.btn-navbar-card {
     margin: 20px;
     padding: 10px;
     border: none;
     background: transparent;
     transition: 0.3s all;
     color: #444;
-    
-    &:hover{
+
+    &:hover {
         background-color: #444;
         border-radius: 8px;
         cursor: pointer;
         color: #fff;
     }
 
-    span{
+    span {
         color: #fff;
         font-size: 30px;
     }
 
-    p{
+    p {
         font-size: 15px;
     }
 }

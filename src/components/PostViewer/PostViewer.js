@@ -5,12 +5,12 @@ import HeaderPostViewer from "./HeaderPostViewer/HeaderPostViewer";
 
 import './PostViewer.scss'
 
-const PostViewer = () => {
+const PostViewer = (props) => {
   return (
     <div className="container" id="container">
-      <HeaderPostViewer />
-      <ContentPostViewer />
-      <FooterPostViewer />
+      <HeaderPostViewer tweetParam={props.tweetParam} />
+      <ContentPostViewer tweetParam={props.tweetParam} />
+      <FooterPostViewer tweetParam={props.tweetParam} />
     </div>
   )
 }

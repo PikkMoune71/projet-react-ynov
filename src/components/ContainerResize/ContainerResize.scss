@@ -1,0 +1,31 @@
+.containerResize{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+
+    #Resizable{
+        border-radius: 10px;
+        height: auto;
+        width: 950px;
+        min-width: 550px;
+        max-width: 950px;
+        padding: 50px;
+        background: rgb(238,174,202);
+        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    }
+    
+    #Draggable{
+        background: rgb(255, 255, 255);
+        border: 1px solid black;
+        cursor: col-resize;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+
+        &:hover{
+            height: 15px;
+            width: 15px;
+        }
+    }
+}

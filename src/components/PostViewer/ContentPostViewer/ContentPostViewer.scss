@@ -1,0 +1,12 @@
+.contentContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+
+    .paragraph{
+        text-align: left;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}

@@ -3,11 +3,12 @@ import TWEET from '../resources/tweet.json'
 
 class StubTwitterApiService extends ApiCallerService {
     computeUrl(idPost) {
-        throw new Error("Method 'computeUrl()' must be implemented.");
+        return null
     }
 
     mapResponse(response) {
-        return TWEET
+        var random = Math.floor(Math.random() * 2)
+        return TWEET[random]
     }
 }
 

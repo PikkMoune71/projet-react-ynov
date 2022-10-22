@@ -15,6 +15,10 @@ class ApiCallerService {
     }
 
     async getPost(idPost) {
+        if (idPost === "") {
+            return null
+        }
+
         var response = ""
 
         const config = {
@@ -27,10 +31,12 @@ class ApiCallerService {
 
         var res;
 
-        try{
-            res = await axios.get(this.computeUrl(idPost), config)
-        }catch(err){
-            res = ""
+        try {
+            var computedUrl = this.computeUrl(idPost)
+            if (computedUrl != null)
+                res = await axios.get(computedUrl, config)
+        } catch (err) {
+            return null
         }
 
         return this.mapResponse(res)

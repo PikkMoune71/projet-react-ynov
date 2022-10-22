@@ -1,9 +1,9 @@
 import './ContentPostViewer.scss'
 
-const ContentPostViewer = () => {
+const ContentPostViewer = (props) => {
   return (
     <div className="contentContainer">
-      <p className="paragraph">Capture and share Twitter posts as beautiful images. Get started by pasting a tweet URL into the input above.</p>
+      <p className="paragraph">{props.tweetParam != null ? props.tweetParam.data.text : "Contenu du Tweet"}</p>
     </div>
   )
 }

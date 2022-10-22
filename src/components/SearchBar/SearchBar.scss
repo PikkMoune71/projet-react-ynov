@@ -1,0 +1,40 @@
+.global-container {
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+
+    .search-container {
+        margin: 0 auto;
+        border-radius: 24px;
+        background-color: white;
+        display: flex;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+        max-width: 40%;
+        min-width: 20%;
+
+        input {
+            flex: auto;
+            border: 0;
+            font-size: 18px;
+            height: 40px;
+        }
+
+        .button-search {
+            height: 40px;
+            width: 5rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .icon {
+                margin: 0 auto;
+                display: block;
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@ import './index.scss'
 import TwitterApiCallerService from './services/twitterApiCallerService'
 import StubTwitterApiService from "./services/stubTwitterApiService";
 
-var caller = new StubTwitterApiService('https://api.twitter.com/2/', 'AAAAAAAAAAAAAAAAAAAAAEw%2BiAEAAAAACxfjt%2FR6mSJCWlMBcmD7oVAXbZo%3DzfN5AFu0kXrXznlDBuZpeq3LSNM2mlZFPCUheSplBmBWl86zoL')
+var caller = new TwitterApiCallerService('http://localhost:3248/', 'unused')
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
   const loadTweetEffect = useEffect(() => {
     async function load() {
       setTweet(await caller.getPost(tweetId))
-      console.log(await caller.getPost(tweetId))
     }
 
 

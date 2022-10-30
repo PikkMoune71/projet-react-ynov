@@ -6,9 +6,32 @@ class StubTwitterApiService extends ApiCallerService {
         return null
     }
 
-    mapResponse(response) {
-        var random = Math.floor(Math.random() * 2)
-        return TWEET[random]
+    async mapResponse(response) {
+        var random = Math.floor(Math.random() * TWEET.length)
+        response = TWEET[random]
+
+        let regex = /https:\/\/t\.co\/[A-Za-z0-9]+/i;
+
+        if (response != null && response.data.text != null) {
+
+            if (response.data.text != null) {
+                response.data.text = response.data.text.replace(regex, '')
+            }
+
+            var cpt = 0
+            if (response.includes.tweets != null) {
+                response.quoteTweets = []
+                while (cpt < response.includes.tweets.length) {
+                    response.quoteTweets.push(await this.getPost(response.includes.tweets[cpt].id))
+                    cpt = cpt + 1
+                }
+            }
+        }
+
+        console.log("jnrfdhufdhjfdiuhfdiufdhi")
+        console.log(response)
+
+        return response
     }
 }
 

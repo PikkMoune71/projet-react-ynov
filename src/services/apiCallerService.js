@@ -21,25 +21,25 @@ class ApiCallerService {
 
         var response = ""
 
-        const config = {
+        /*const config = {
             headers: {
                 // Add any auth token here
                 'Authorization': 'Bearer ' + this.token,
                 "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json"
             }
-        }
+        }*/
 
         var res;
 
         try {
             var computedUrl = this.computeUrl(idPost)
             if (computedUrl != null)
-                res = await axios.get(computedUrl, config)
+                res = await axios.get(computedUrl)
         } catch (err) {
             return null
         }
 
-        return this.mapResponse(res)
+        return this.mapResponse(res.data)
     }
 
     computeUrl(idPost) {

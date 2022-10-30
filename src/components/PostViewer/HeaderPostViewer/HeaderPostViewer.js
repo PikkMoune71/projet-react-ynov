@@ -2,6 +2,7 @@ import icon from '../../../assets/img/logo192.png'
 import './HeaderPostViewer.scss'
 
 const HeaderPostViewer = (props) => {
+
   return (
     <div className="headerContainer">
       <div className="icon-profil">

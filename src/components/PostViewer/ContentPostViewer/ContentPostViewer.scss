@@ -1,12 +1,19 @@
 .contentContainer {
-    display: flex;
-    justify-content: left;
-    align-items: left;
     padding: 10px 0;
 
     .paragraph {
         text-align: left;
         font-size: 20px;
         font-weight: 500;
+    }
+
+    .img-container {
+        width: 100%;
+        text-align: center;
+
+        img {
+            text-align: center;
+            max-height: 400px;
+        }
     }
 }

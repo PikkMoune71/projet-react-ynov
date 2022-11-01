@@ -1,17 +1,8 @@
 import { useRef, useState } from 'react';
 import PostViewer from '../PostViewer/PostViewer';
 import './ContainerResize.scss'
-import * as htmlToImage from 'html-to-image';
-import { toPng } from 'html-to-image';
-import download from 'downloadjs'
 
 
-function savePng() {
-    htmlToImage.toPng(document.getElementById('Resizable'))
-        .then(function (dataUrl) {
-            download(dataUrl, 'tweet.png');
-        });
-}
 
 const ContainerResize = (props) => {
 
@@ -35,7 +26,6 @@ const ContainerResize = (props) => {
 
     return (
         <div className="containerResize">
-            <button onClick={savePng}>Save</button>
             <div
                 id="Draggable"
                 draggable="true"

@@ -1,11 +1,10 @@
 import './Button.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const Button = (props) => {
   return (
-    <button className={props.class} onClick={props.click}>
-        <span><FontAwesomeIcon icon={faMoon} /></span>
+    <button className={`btn-toolsbar ${props.class}`} onClick={props.click}>
+        <span><FontAwesomeIcon icon={props.icon} /></span>
         <p>{props.name}</p>
     </button>
   )

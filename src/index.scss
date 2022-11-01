@@ -11,6 +11,7 @@ body{
 }
 
 .dark {
-    background-image: linear-gradient(150deg, rgb(95, 108, 138), rgb(48, 59, 94), rgb(14, 18, 38)); 
+    background: rgb(71,96,150);
+    background: linear-gradient(90deg, rgba(71,96,150,1) 0%, rgba(44,64,106,1) 27%, rgba(38,64,105,1) 44%, rgba(28,54,85,1) 69%, rgba(8,33,62,1) 96%);
     color:#fff;
 }

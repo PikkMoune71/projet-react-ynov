@@ -1,24 +1,29 @@
-.btn-navbar-card {
-    margin: 20px;
+.btn-toolsbar {
+    margin-left: 20px;
     padding: 10px;
     border: none;
     background: transparent;
-    transition: 0.3s all;
+    transition: 0.2s ease;
     color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     &:hover {
-        background-color: #444;
+        background-color: rgb(43, 56, 73);
         border-radius: 8px;
         cursor: pointer;
-        color: #fff;
+        color: rgb(222, 222, 222);
     }
 
     span {
-        color: #fff;
+        color: rgb(222, 222, 222);
         font-size: 30px;
     }
 
     p {
         font-size: 15px;
+        color: rgb(222, 222, 222);
     }
 }

@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './ToolBar.scss';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs'
-import { faMoon, faSave } from '@fortawesome/free-solid-svg-icons'
+import { faMoon, faSave, faSun } from '@fortawesome/free-solid-svg-icons'
 
 const ToolsBar = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -23,7 +23,7 @@ const ToolsBar = () => {
                 <Button
                 class="btn-toolsbar"
                 name="Card"
-                icon={faMoon}
+                icon={darkMode ? faMoon : faSun}
                 click={() => {
                     setDarkMode(!darkMode);
                     changeTheme(darkMode ? themes.dark : themes.light);

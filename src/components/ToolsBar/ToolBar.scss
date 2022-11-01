@@ -1,7 +1,8 @@
 .containerToolsbar{
     position: absolute;
-    top: 75%;
-    left: 45%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     padding: 5px 20px;
     background-color: rgb(29, 39, 52);
     border: 1px solid hsla(0, 0%, 70%, .23);

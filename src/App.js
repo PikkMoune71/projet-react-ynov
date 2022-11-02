@@ -5,6 +5,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import './index.scss'
 import TwitterApiCallerService from './services/twitterApiCallerService'
 import ToolsBar from "./components/ToolsBar/ToolsBar";
+import Logo from "./components/Logo/Logo";
 
 var caller = new TwitterApiCallerService('http://localhost:3248/', 'unused')
 
@@ -22,6 +23,7 @@ function App() {
   }, [tweetId])
   return (
     <div>
+      <Logo />
       <SearchBar click={(el) => {
         setTweetId(el)
       }} />

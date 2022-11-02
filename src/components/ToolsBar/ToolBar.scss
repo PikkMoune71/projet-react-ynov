@@ -1,6 +1,7 @@
 .containerToolsbar{
-    position: absolute;
-    top: 80%;
+    opacity: .5;
+    position: fixed;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     padding: 5px 20px;
@@ -10,6 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s all;
+
+    &:hover{
+        opacity: 1;
+    }
 
     .content-save{
         border-left: 1px solid hsla(0deg, 0%, 70%, 0.23);

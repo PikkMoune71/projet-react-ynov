@@ -8,10 +8,15 @@
     }
 
     .img-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
         width: 100%;
         text-align: center;
 
         img {
+            width: 99%;
+            height: auto;
             text-align: center;
             max-height: 400px;
         }

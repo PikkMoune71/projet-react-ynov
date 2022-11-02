@@ -24,11 +24,11 @@ REACT_APP_BACK_PORT=PortDuBack
 
 **Voici quelques images du site :**
 
-![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+![Mode clair](documentation/images/image-twimage-1.png)
 
-![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+![Mode sombre](documentation/images/image-twimage-2.png)
 
-![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+![Retweet](documentation/images/image-twimage-3.png)
 
 
 ## Installation

@@ -9,6 +9,9 @@ Voici les fonctionalités implémentées dans cette version du site :
 - Possibilité de modifier les couleurs du tweet
 - Possibilité d'exporter le tweet au format image PNG
 
+ATTENTION : Ce projet fonctionne avec le back présent ici. Vous pouvez-également lancer ce projet en utilisant un stub. Pour faire cela, saisir le pramètre suivant dans le fichier .env du projet : 
+``USE-MOCK=true``
+
 
 ## Installation
 

@@ -7,7 +7,6 @@
         }
     }
     .interactivities-tweet{
-        display: flex;
         justify-content: flex-start;
 
 
@@ -33,4 +32,8 @@
 
 .hidden{
     display: none;
+}
+
+.visible{
+    display: flex;
 }

@@ -25,4 +25,16 @@
         font-size: 15px;
         color: rgb(222, 222, 222);
     }
+
+}
+.save{
+    background-color: rgb(66, 130, 208);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(222, 222, 222);
+    margin-left: 20px;
+
+    &:hover{
+        background-color: rgba(66, 130, 208, 0.7);
+    }
 }

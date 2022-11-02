@@ -10,4 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .content-save{
+        border-left: 1px solid hsla(0deg, 0%, 70%, 0.23);
+        margin-left: 15px;
+    }
 }

@@ -54,13 +54,13 @@ PORT=3248``
 
 ### Diagramme de classes de l'architecture permettant de contacter le back / le stub :
 
-![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+![Diagramme de classes](documentation/images/react-architecture.png)
 
 ApiCallerService est un classe abstraite qui contient une méthode "getPost". Cette méthode utilise les méthodes "computeUrl" et "mapResponse" qui sont abstraites et donc définies dans les classes "StubTwitterApiService" et "TwitterApiCallerService". Cette architecture permettra de rajouter de nouveaux services pour d'autres réseaux sociaux tels que LinkedIn ou encore Instagram.
 
 ### Architecture des composants React : 
 
-![Architecture des composants React](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+![Architecture des composants React](documentation/images/agencement-composants.png)
 
 
 ## Hooks utilisés

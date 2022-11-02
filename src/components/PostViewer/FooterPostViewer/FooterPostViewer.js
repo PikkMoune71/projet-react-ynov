@@ -11,7 +11,7 @@ const FooterPostViewer = (props) => {
             <div className="created-post">
                 <p>{props.tweetParam != null ? Moment(props.tweetParam.data.created_at).format('MM:HH - DD MMM, YYYY') : Moment().format('MM:HH - DD MMM, YYYY')}</p>
             </div>
-            <div className="interactivities-tweet">
+            <div className="interactivities-tweet" id="interactivities">
                 <div className='item'>
                     <span>{props.tweetParam != null ? computeMetrics(props.tweetParam.data.public_metrics.reply_count) : "0"}</span>
                     <p>replies</p>

@@ -5,7 +5,7 @@ import './ToolBar.scss';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs'
 import { faMoon, faSave, faSun, faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as faHeartRegular, faMoon as faMoonRegular } from '@fortawesome/free-regular-svg-icons'
 
 const ToolsBar = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -25,7 +25,7 @@ const ToolsBar = () => {
                     <Button
                     class="btn-toolsbar"
                     name="Card"
-                    icon={darkMode ? faMoon : faSun}
+                    icon={darkMode ? faMoonRegular : faMoon}
                     click={() => {
                         setDarkMode(!darkMode);
                         changeTheme(darkMode ? themes.dark : themes.light);
@@ -49,7 +49,7 @@ const ToolsBar = () => {
                 )}
             </ThemeContext.Consumer>
             <div className='content-save'>
-                <Button class="btn-toolsbar save" click={savePng} name="Save" icon={faSave}></Button>
+                <Button class="btn-toolsbar save" click={savePng} name="Download" icon={faSave}></Button>
             </div>
         </div>
     )

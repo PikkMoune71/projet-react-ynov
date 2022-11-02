@@ -14,6 +14,15 @@ ATTENTION : Ce projet fonctionne avec le back présent [ici](https://github.com/
 ``USE-MOCK=true``
 
 
+**Voici quelques images du site :**
+
+![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+
+![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+
+![Diagramme de classes](https://wpformation.com/wp-content/uploads/2014/03/todo1.jpg)
+
+
 ## Installation
 
 Saisir la commande ``npm install`` pour installer les dépendances du projet.

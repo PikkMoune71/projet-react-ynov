@@ -11,7 +11,7 @@ Voici les fonctionalités implémentées dans cette version du site :
 - Affichage ou non des likes, nombre de RT, ...
 
 ATTENTION : Ce projet fonctionne avec le back présent [ici](https://github.com/ld-web/twitter-api-express-client). Vous pouvez-également lancer ce projet en utilisant un stub. Pour faire cela, saisir le pramètre suivant dans le fichier .env du projet : 
-``USE-MOCK=true``
+``USE_MOCK=true``
 
 
 **Voici quelques images du site :**

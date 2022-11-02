@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './ToolBar.scss';
 import * as htmlToImage from 'html-to-image';
 import download from 'downloadjs'
-import { faMoon, faSave, faSun, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faMoon, faSave, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartRegular, faMoon as faMoonRegular } from '@fortawesome/free-regular-svg-icons'
 
 const ToolsBar = () => {

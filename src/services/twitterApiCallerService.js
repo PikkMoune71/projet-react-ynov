@@ -7,7 +7,7 @@ class TwitterApiCallerService extends ApiCallerService {
 
 
     async mapResponse(response) {
-        console.log(response)
+        response = response.data
         if (response == null)
             return response
 

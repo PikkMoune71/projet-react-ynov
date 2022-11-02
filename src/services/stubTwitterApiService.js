@@ -10,6 +10,7 @@ class StubTwitterApiService extends ApiCallerService {
         var random = Math.floor(Math.random() * TWEET.length)
         response = TWEET[random]
 
+        console.log(response)
         let regex = /https:\/\/t\.co\/[A-Za-z0-9]+/i;
 
         if (response != null && response.data.text != null) {

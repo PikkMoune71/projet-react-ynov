@@ -29,7 +29,6 @@ const ContainerResize = (props) => {
     }
 
     const resizeLeft = (e) => {
-        console.log(e.clientX)
         if (e.clientX > 1570) {
             resizable.current.style.width = '550px'
         }
@@ -40,7 +39,6 @@ const ContainerResize = (props) => {
     }
 
     const resizeRight = (e) => {
-        console.log(e.clientX)
         resizable.current.style.width = `${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`;
         setEndSize(parseInt(initialSize) + parseInt(e.clientX - initialPos))
     }

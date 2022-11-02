@@ -29,7 +29,7 @@ class ApiCallerService {
             }
         }*/
 
-        var res;
+        var res = null;
 
         try {
             var computedUrl = this.computeUrl(idPost)
@@ -39,7 +39,7 @@ class ApiCallerService {
             return null
         }
 
-        return this.mapResponse(res.data)
+        return this.mapResponse(res)
     }
 
     computeUrl(idPost) {

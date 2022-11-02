@@ -6,8 +6,13 @@ import './index.scss'
 import TwitterApiCallerService from './services/twitterApiCallerService'
 import ToolsBar from "./components/ToolsBar/ToolsBar";
 import Logo from "./components/Logo/Logo";
+import StubTwitterApiService from './services/stubTwitterApiService'
 
-var caller = new TwitterApiCallerService('http://localhost:3248/', 'unused')
+var caller = new StubTwitterApiService('unused', 'unused')
+if (process.env.REACT_APP_USE_MOCK == 'false') {
+  caller = new TwitterApiCallerService(`${process.env.REACT_APP_BACK_BASE_URL}:${process.env.REACT_APP_BACK_PORT}/`, 'unused')
+}
+
 
 
 function App() {

@@ -53,4 +53,4 @@ PORT=3248``
 ## Auteurs
 
 - Théo RAMOUSSE
-- Antoine Picard
+- Antoine PICARD

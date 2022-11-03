@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { ThemeContext, themes, responses } from '../../context/ThemeContext';
+import React, { useContext } from 'react'
+import { ThemeContext, themes} from '../../context/ThemeContext';
 import Button from '../Button/Button';
 import './ToolBar.scss';
 import * as htmlToImage from 'html-to-image';
@@ -8,8 +8,8 @@ import { faMoon, faSave, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartRegular, faMoon as faMoonRegular } from '@fortawesome/free-regular-svg-icons'
 
 const ToolsBar = () => {
-    const [darkMode, setDarkMode] = useState(true);
-    const [responseMode, setResponseMode] = useState(true);
+    const { theme, changeTheme} = useContext(ThemeContext);
+    const { showResponse, changeResponse} = useContext(ThemeContext);
 
     function savePng() {
         htmlToImage.toPng(document.getElementById('Resizable'))
@@ -20,34 +20,20 @@ const ToolsBar = () => {
 
     return (
         <div className='containerToolsbar'>
-            <ThemeContext.Consumer>
-                {({ changeTheme }) => (
-                    <Button
-                    class="btn-toolsbar"
-                    name="Card"
-                    icon={darkMode ? faMoonRegular : faMoon}
-                    click={() => {
-                        setDarkMode(!darkMode);
-                        changeTheme(darkMode ? themes.dark : themes.light);
-                    }}
-                    >
-                    </Button>
-                )}
-            </ThemeContext.Consumer>
-            <ThemeContext.Consumer>
-                {({ changeResponse }) => (
-                    <Button
-                    class="btn-toolsbar"
-                    name="Response"
-                    icon={responseMode ? faHeart : faHeartRegular}
-                    click={() => {
-                        setResponseMode(!responseMode);
-                        changeResponse(responseMode ? responses.hidden : responses.show);
-                    }}
-                    >
-                    </Button>
-                )}
-            </ThemeContext.Consumer>
+            <Button
+                class="btn-toolsbar"
+                name="Card"
+                icon={theme ? faMoon : faMoonRegular}
+                click={() => changeTheme(theme ? themes.light : themes.dark)}
+            >
+            </Button>
+            <Button
+                class="btn-toolsbar"
+                name="Response"
+                icon={showResponse ? faHeart : faHeartRegular}
+                click={() => changeResponse(show => !show)}
+            >
+            </Button>
             <div className='content-save'>
                 <Button class="btn-toolsbar save" click={savePng} name="Download" icon={faSave}></Button>
             </div>

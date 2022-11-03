@@ -1,45 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeContext, themes, responses} from './ThemeContext';
+import React, { useState} from 'react';
+import { ThemeContext, themes} from './ThemeContext';
 
 export default function ThemeContextWrapper(props) {
   const [theme, setTheme] = useState(themes.light);
-  const [response, setResponse] = useState(responses.show)
-
+  const [showResponse, setShowResponse] = useState(true)
+  
   function changeTheme(theme) {
     setTheme(theme);
   }
 
-  function changeResponse(response){
-    setResponse(response);
+  function changeResponse(showResponse){
+    setShowResponse(showResponse);
   }
-
-  useEffect(() => {
-    switch (theme) {
-      case themes.dark:
-        console.log(document.getElementById('container'));
-        document.getElementById('container').classList.add('dark');
-        break;
-      case themes.light:
-      default:
-        document.getElementById('container').classList.remove('dark');
-        break;
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    switch (response) {
-      case responses.hidden:
-        document.getElementById('interactivities').style.display = "none";
-        break;
-      case responses.show:
-      default:
-        document.getElementById('interactivities').style.display = "flex";
-        break;
-    }
-  }, [response]);
-
+  
   return (
-    <ThemeContext.Provider value={{ theme: theme, response: response, changeTheme: changeTheme, changeResponse: changeResponse }}>
+    <ThemeContext.Provider value={{ theme, showResponse, changeTheme, changeResponse }}>
       {props.children}
     </ThemeContext.Provider>
   );

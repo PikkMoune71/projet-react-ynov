@@ -24,11 +24,17 @@ REACT_APP_BACK_PORT=PortDuBack
 
 **Voici quelques images du site :**
 
-![Mode clair](documentation/images/image-twimage-1.png)
+<p align="center">
+  <img alt="Mode clair" height="400" src="documentation/images/image-twimage-1.png">
+</p>
 
-![Mode sombre](documentation/images/image-twimage-2.png)
+<p align="center">
+  <img alt="Mode sombre" height="400" src="documentation/images/image-twimage-2.png">
+</p>
 
-![Retweet](documentation/images/image-twimage-3.png)
+<p align="center">
+  <img alt="Retweet" height="400" src="documentation/images/image-twimage-3.png">
+</p>
 
 
 ## Installation
@@ -76,16 +82,22 @@ Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du
 
 Voici comment nous avons implémenté le service permettant de contacter les différentes API (cette méthode permet de rajouter simplement une connexion à une nouvelle API) : 
 
-![Récupération d'un post commune à toutes les API ](documentation/images/get-post.png)
+<p align="center">
+  <img alt="Récupération d'un post commune à toutes les API" height="400" src="documentation/images/get-post.png">
+</p>
 
 Cette méthode est commune à tous les services permettant de contacter les API. Elle utilise des méthodes abstraites qui seront implémentées dans les classes filles.
 
-![Map response de l'API Twitter](documentation/images/map-response.png)
+<p align="center">
+  <img alt="Map response de l'API Twitter" height="400" src="documentation/images/map-response.png">
+</p>
 
 MapResponse permet la suppression des liens raccourcis présents dans les posts Twitter (lorsqu'un utilisateur joint un média à son tweet, le lien raccourci est présent au format texte. Nous ne voulons pas qu'il apparaisse sur le tweet car nous récupérons déjà le média dans un autre champ de la réponse à la requête).
 Dans un second temps, la méthode appelle récursivement "getPost" afin de récupérer les tweets cités au sein du tweet.
 
-![Nouvelle version du Contexte](documentation/images/code-app-js.png)
+<p align="center">
+  <img alt="Nouvelle version du Contexte" height="400" src="documentation/images/code-app-js.png">
+</p>
 
 Pour finir, nous instancions ce service ou le stub dans App.js. Deux states sont utilisés. L'un permet de stocker l'id du tweet extrait de l'url soumise par l'utilisateur. Lorsque ce state change, le useEffect permettant d'appeler "getPost" est appelé et le second state permettant de stocker le tweet est modifié. Par la suite, ce state est envoyé aux différents composants de l'application grâce aux paramètres.
 
@@ -94,21 +106,28 @@ Pour finir, nous instancions ce service ou le stub dans App.js. Deux states sont
 
 Nous souhaitions mettre en place un thème sombre pour que les tweets apparaissent avec des couleurs claires ou sombres. Pour faire cela, nous avions besoin que l'état du thème soit connus dans de nombreux coposants à la fois. Nous nous sommes donc dirigés vers l'utilisation d'un contexte global. Voici son implémentation : 
 
-![Nouvelle version du Contexte](documentation/images/new-version-context.png)
+<p align="center">
+  <img alt="Nouvelle version du Contexte" height="400" src="documentation/images/new-version-context.png">
+</p>
 
-![Nouvelle version du Contexte Wrapper](documentation/images/new-version-context-wrapper.png)
+<p align="center">
+  <img alt="Nouvelle version du Contexte Wrapper" height="400" src="documentation/images/new-version-context-wrapper.png">
+</p>
 
 
 Dans la première version que nous avons développé, nous changions le style des composants graphiques directement dans le "contextWrapper" avec du JS natif. Cette méthode, en plus d'être peu "React Spirit", ne permettait pas de gérer la récursivité (un tweet peut contenir un autre tweet dans le cas d'un retweet) :
 
-![Acienne version du contexte](documentation/images/old-version-context-wrapper.png)
+<p align="center">
+  <img alt="Ancienne version du contexte" height="400" src="documentation/images/old-version-context-wrapper.png">
+</p>
 
 Dans la seconde version, nous avons modifié le code pour que le contexte soit connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
 
 Nous avons donc modifié notre code pour que ce soient les composants React qui modifient leurs propres styles en fonction de la valeur du thème :
 
-![Utilisation du contexte dans les composants](documentation/images/use-context.png)
-
+<p align="center">
+  <img alt="Utilisation du contexte dans les composants" height="400" src="documentation/images/use-context.png">
+</p>
 
 
 
@@ -116,13 +135,18 @@ Nous avons donc modifié notre code pour que ce soient les composants React qui 
 
 ### Diagramme de classes de l'architecture permettant de contacter le back / le stub :
 
-![Diagramme de classes](documentation/images/react-architecture.png)
+<p align="center">
+  <img alt="Diagramme de classes" height="400" src="documentation/images/react-architecture.png">
+</p>
 
 ApiCallerService est un classe abstraite qui contient une méthode "getPost". Cette méthode utilise les méthodes "computeUrl" et "mapResponse" qui sont abstraites et donc définies dans les classes "StubTwitterApiService" et "TwitterApiCallerService". Cette architecture permettra de rajouter de nouveaux services pour d'autres réseaux sociaux tels que LinkedIn ou encore Instagram.
 
 ### Architecture des composants React : 
 
-![Architecture des composants React](documentation/images/agencement-composants-1.png)
+
+<p align="center">
+  <img alt="Architecture des composants React" height="400" src="documentation/images/agencement-composants-1.png">
+</p>
 
 
 ## Hooks utilisés

@@ -9,14 +9,24 @@
 
     .img-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
         margin-top: 20px;
         width: 100%;
         text-align: center;
 
-        div{
+        .w-50{
             width: 50%;
+            img {
+                max-width: 99%;
+                height: auto;
+                text-align: center;
+                max-height: 400px;
+            }
+        }
+
+        .w-100{
+            width: 100%;
             img {
                 max-width: 99%;
                 height: auto;

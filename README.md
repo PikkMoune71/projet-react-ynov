@@ -87,7 +87,7 @@ Dans la première version que nous avons développé, nous changions le style de
 
 ![Acienne version du contexte](documentation/images/old-version-context-wrapper.png)
 
-Dans la seconde version, nous avons modifié le code e contexte sera connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
+Dans la seconde version, nous avons modifié le code pour que le contexte soit connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
 
 Nous avons donc modifié notre code pour que ce soient les composants React qui modifient leurs propres styles en fonction de la valeur du thème :
 

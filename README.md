@@ -72,7 +72,7 @@ Voici comment lire cette URL: Nous souhaitons utiliser la version 2 de l'API Twi
 
 Notre principale difficulté a été l'envoie de cette requête avec React. Nous avons utilisé Axios pour contacter cette URL en fournissant le Bearer Token mais la requête ne passait pas. Nous avons donc, dans un premier temps, mis en place un Stub avec des tweets au format JSON.
 
-Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc frcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS pour envoyer nos requêtes.
+Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc forcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS + Express pour envoyer nos requêtes.
 
 ### Mise en place d'un contexte global pour la gestion du mode sombre des Tweets
 
@@ -87,7 +87,7 @@ Dans la première version que nous avons développé, nous changions le style de
 
 ![Acienne version du contexte](documentation/images/old-version-context-wrapper.png)
 
-Dans la seconde version, nous avons modifié le code e contexte sera connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
+Dans la seconde version, nous avons modifié le code pour que le contexte soit connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
 
 Nous avons donc modifié notre code pour que ce soient les composants React qui modifient leurs propres styles en fonction de la valeur du thème :
 
@@ -111,7 +111,7 @@ ApiCallerService est un classe abstraite qui contient une méthode "getPost". Ce
 
 ## Hooks utilisés
 
-* **createContext** - Utilisé pour que les différents composants React aient connaissance de l'état courant du mode sombre (clair/sombre)
+* **useContext** - Utilisé pour que les différents composants React aient connaissance de l'état courant du mode sombre (clair/sombre)
 * **useState** - Utilisé plusieurs fois dans le projet. Nottament pour la gestion du changement de Tweet. Le composant SearchBar reçoit en paramètre la fonction setTweetId. Lorsque setTweetId va être appelé par le composant, son état va changer dans App.js. Lorsque son état change, la fonction setTweet du second state va être appelée et cela va entraîner l'appel à l'API de Twitter
 * **useEffect** - Utilisé pour contacter l'API Twitter lorsque le TweetId change dans App.js
 * **useRef** - Utilisé dans le composant SearchBar. Lorsque le bouton "Rechercher" va être appuyé, la valeur du useRef va être récupérée. Cette valeur est référencée dans l'input de la barre de recherche. Nous avons également utilisé "useRef" pour le redimensionnement du conteneur du tweet.  

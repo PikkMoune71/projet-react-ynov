@@ -106,7 +106,7 @@ ApiCallerService est un classe abstraite qui contient une méthode "getPost". Ce
 
 ### Architecture des composants React : 
 
-![Architecture des composants React](documentation/images/agencement-composants.png)
+![Architecture des composants React](documentation/images/agencement-composants-1.png)
 
 
 ## Hooks utilisés

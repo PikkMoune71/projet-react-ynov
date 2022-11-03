@@ -1,9 +1,9 @@
 # Twimage
 
 Ce petit projet consiste à réaliser un site web reprenant certaines fonctionnalités du célèbre site [poet.so](https://poet.so/).
-Le but de ce projet était de nous former à React.
+Le but de ce projet était de nous former à React. Nous avons choisi de le réaliser car nous trouvions techniquement intéressant de comprendre comment un tweet pouvait être transformé en une image. De plus, par le passé, Théo avait déjà travaillé avec l'API Twitter (la première version de l'API utilisait un système d'autentification différent). Il suhaitait donc voir comment mettre en place un échange avec la nouvelle version de l'API.
 
-Voici les fonctionalités implémentées dans cette version du site : 
+Voici les fonctionalités implémentées dans la version actuelle du site : 
 - Import d'un tweet Twitter et affichage dans le site
 - Possibilité de redimensionner le Tweet
 - Possibilité de modifier les couleurs du tweet
@@ -58,6 +58,44 @@ PORT=3248``
 * [download JS](https://www.npmjs.com/package/downloadjs) - Bibliothèque permettant le téléchargement de l'image convertie
 * [Font Awesome](https://fontawesome.com/) - Bibliothèque fournissant un ensembles d'icones SVG
 
+## Difficultés rencontrées et explications techniques
+
+### Connexion à l'API Twitter
+
+Dès le début du projet, nous avons souhaité mettre en place une connexion à l'API Twitter afin de pouvoir tester notre code avec de vraies données. Nous avons donc créé un compte Twitter et généré un "Bearer Token". Par la suite, nous avons pu tester le bon fonctionnement de l'API grâce à des requêtes PostMan qui sont passées avec succès.
+
+Voici l'URL pour requêter l'API Twiter : 
+
+https://api.twitter.com/2/tweets/1586356158662672386?tweet.fields=created_at,public_metrics&user.fields=description,profile_image_url&expansions=author_id,referenced_tweets.id,attachments.media_keys&media.fields=url
+
+Voici comment lire cette URL: Nous souhaitons utiliser la version 2 de l'API Twitter. Notre requête concerne le tweet avec l'id 1586356158662672386. Nous souhaitons que la donnée retournée contiennent les informations contenues dans le paramètre "tweet.fields", les informations sur l'utilisateur à l'origine du tweet avec les champs contenus dans le paramètre "user.fields". Nous souhaitons également les informations complémentaires contenues dans le paramètre "expansion".
+
+Notre principale difficulté a été l'envoie de cette requête avec React. Nous avons utilisé Axios pour contacter cette URL en fournissant le Bearer Token mais la requête ne passait pas. Nous avons donc, dans un premier temps, mis en place un Stub avec des tweets au format JSON.
+
+Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc frcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS pour envoyer nos requêtes.
+
+### Mise en place d'un contexte global pour la gestion du mode sombre des Tweets
+
+Nous souhaitions mettre en place un thème sombre pour que les tweets apparaissent avec des couleurs claires ou sombres. Pour faire cela, nous avions besoin que l'état du thème soit connus dans de nombreux coposants à la fois. Nous nous sommes donc dirigés vers l'utilisation d'un contexte global. Voici son implémentation : 
+
+![Nouvelle version du Contexte](documentation/images/new-version-context.png)
+
+![Nouvelle version du Contexte Wrapper](documentation/images/new-version-context-wrapper.png)
+
+
+Dans la première version que nous avons développé, nous changions le style des composants graphiques directement dans le "contextWrapper" avec du JS natif. Cette méthode, en plus d'être peu "React Spirit", ne permettait pas de gérer la récursivité (un tweet peut contenir un autre tweet dans le cas d'un retweet) :
+
+![Acienne version du contexte](documentation/images/old-version-context-wrapper.png)
+
+Dans la seconde version, nous avons modifié le code e contexte sera connu par tous ses enfants. Pour cela, les enfants appeleront "useContext" pour récupérer les attributs de celui-ci.
+
+Nous avons donc modifié notre code pour que ce soient les composants React qui modifient leurs propres styles en fonction de la valeur du thème :
+
+![Utilisation du contexte dans les composants](documentation/images/use-context.png)
+
+
+
+
 ## Architecture générale
 
 ### Diagramme de classes de l'architecture permettant de contacter le back / le stub :
@@ -76,7 +114,7 @@ ApiCallerService est un classe abstraite qui contient une méthode "getPost". Ce
 * **createContext** - Utilisé pour que les différents composants React aient connaissance de l'état courant du mode sombre (clair/sombre)
 * **useState** - Utilisé plusieurs fois dans le projet. Nottament pour la gestion du changement de Tweet. Le composant SearchBar reçoit en paramètre la fonction setTweetId. Lorsque setTweetId va être appelé par le composant, son état va changer dans App.js. Lorsque son état change, la fonction setTweet du second state va être appelée et cela va entraîner l'appel à l'API de Twitter
 * **useEffect** - Utilisé pour contacter l'API Twitter lorsque le TweetId change dans App.js
-* **useRef** - Utilisé dans le composant SearchBar. Lorsque le bouton "Rechercher" va être appuyé, la valeur du useRef va être récupérée. Cette valeur est référencée dans l'input de la barre de recherche
+* **useRef** - Utilisé dans le composant SearchBar. Lorsque le bouton "Rechercher" va être appuyé, la valeur du useRef va être récupérée. Cette valeur est référencée dans l'input de la barre de recherche. Nous avons également utilisé "useRef" pour le redimensionnement du conteneur du tweet.  
 
 ## Auteurs
 

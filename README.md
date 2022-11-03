@@ -111,7 +111,7 @@ ApiCallerService est un classe abstraite qui contient une méthode "getPost". Ce
 
 ## Hooks utilisés
 
-* **createContext** - Utilisé pour que les différents composants React aient connaissance de l'état courant du mode sombre (clair/sombre)
+* **useContext** - Utilisé pour que les différents composants React aient connaissance de l'état courant du mode sombre (clair/sombre)
 * **useState** - Utilisé plusieurs fois dans le projet. Nottament pour la gestion du changement de Tweet. Le composant SearchBar reçoit en paramètre la fonction setTweetId. Lorsque setTweetId va être appelé par le composant, son état va changer dans App.js. Lorsque son état change, la fonction setTweet du second state va être appelée et cela va entraîner l'appel à l'API de Twitter
 * **useEffect** - Utilisé pour contacter l'API Twitter lorsque le TweetId change dans App.js
 * **useRef** - Utilisé dans le composant SearchBar. Lorsque le bouton "Rechercher" va être appuyé, la valeur du useRef va être récupérée. Cette valeur est référencée dans l'input de la barre de recherche. Nous avons également utilisé "useRef" pour le redimensionnement du conteneur du tweet.  

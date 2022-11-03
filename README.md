@@ -72,7 +72,7 @@ Voici comment lire cette URL: Nous souhaitons utiliser la version 2 de l'API Twi
 
 Notre principale difficulté a été l'envoie de cette requête avec React. Nous avons utilisé Axios pour contacter cette URL en fournissant le Bearer Token mais la requête ne passait pas. Nous avons donc, dans un premier temps, mis en place un Stub avec des tweets au format JSON.
 
-Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc forcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS pour envoyer nos requêtes.
+Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc forcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS + Express pour envoyer nos requêtes.
 
 ### Mise en place d'un contexte global pour la gestion du mode sombre des Tweets
 

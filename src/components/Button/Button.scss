@@ -1,0 +1,40 @@
+.btn-toolsbar {
+    padding: 15px;
+    border: none;
+    background: transparent;
+    transition: 0.2s ease;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+        background-color: rgb(43, 56, 73);
+        border-radius: 8px;
+        cursor: pointer;
+        color: rgb(222, 222, 222);
+    }
+
+    span {
+        color: rgb(222, 222, 222);
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+        color: rgb(222, 222, 222);
+    }
+
+}
+.save{
+    background-color: rgb(66, 130, 208);
+    border-radius: 8px;
+    cursor: pointer;
+    color: rgb(222, 222, 222);
+    margin-left: 20px;
+
+    &:hover{
+        background-color: rgba(66, 130, 208, 0.7);
+    }
+}

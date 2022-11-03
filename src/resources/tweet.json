@@ -1,0 +1,149 @@
+[
+    {
+        "data": {
+            "created_at": "2022-10-10T19:57:15.000Z",
+            "text": "Learn CPR. It can save a life someday. https://t.co/83E0nK9Hy4",
+            "edit_history_tweet_ids": [
+                "1579561721223839744"
+            ],
+            "author_id": "259725229",
+            "public_metrics": {
+                "retweet_count": 5882,
+                "reply_count": 135,
+                "like_count": 19027,
+                "quote_count": 149
+            },
+            "id": "1579561721223839744"
+        },
+        "includes": {
+            "users": [
+                {
+                    "profile_image_url": "https://pbs.twimg.com/profile_images/1259558245/vala_300dpi_normal.jpg",
+                    "name": "Vala Afshar",
+                    "id": "259725229",
+                    "description": "Chief Digital Evangelist @Salesforce | Columnist: @ZDNet | Show: @DisrupTVShow | Book: https://t.co/r8gWNm3YzU",
+                    "username": "ValaAfshar"
+                }
+            ]
+        }
+    },
+    {
+        "data": {
+            "text": "Congrats to @SpaceX team on 48th launch this year! Falcon 9 now holds record for most launches of a single vehicle type in a year.",
+            "id": "1583133885696987136",
+            "author_id": "44196397",
+            "created_at": "2022-10-20T16:31:46.000Z",
+            "edit_history_tweet_ids": [
+                "1583133885696987136"
+            ],
+            "public_metrics": {
+                "retweet_count": 5014,
+                "reply_count": 5734,
+                "like_count": 74041,
+                "quote_count": 331
+            }
+        },
+        "includes": {
+            "users": [
+                {
+                    "username": "elonmusk",
+                    "profile_image_url": "https://pbs.twimg.com/profile_images/1580062742693699584/RJ5EI7PS_normal.jpg",
+                    "name": "Elon Musk",
+                    "id": "44196397",
+                    "description": ""
+                }
+            ]
+        }
+    },
+    {
+        "data": {
+            "text": "qui a osé douter https://t.co/o5c2Q16hLQ",
+            "edit_history_tweet_ids": [
+                "1586518076064923648"
+            ],
+            "created_at": "2022-10-30T00:39:20.000Z",
+            "public_metrics": {
+                "retweet_count": 47,
+                "reply_count": 29,
+                "like_count": 1449,
+                "quote_count": 1
+            },
+            "id": "1586518076064923648",
+            "author_id": "3056720847",
+            "referenced_tweets": [
+                {
+                    "type": "quoted",
+                    "id": "1586410653170159616"
+                }
+            ]
+        },
+        "includes": {
+            "users": [
+                {
+                    "username": "AREtoiles",
+                    "description": "Smash Pac-Man Animateur - ingénieur - Streamer sur plein de jeux et même de culture générale sur Twitch - MultiGamer - je ferai QPUC un jour",
+                    "profile_image_url": "https://pbs.twimg.com/profile_images/1571557802329489408/fNcIlp4Y_normal.jpg",
+                    "name": "Etoiles",
+                    "id": "3056720847"
+                }
+            ],
+            "tweets": [
+                {
+                    "text": "Le seul JDG qu'il restera sur Terre après cette soirée c'est Frederic Molas.\n\nJ'ose meme pas imaginer ce que T1 va faire a JDG dans cette demi finale ca me donne des frissons de bonheur 🥰",
+                    "edit_history_tweet_ids": [
+                        "1586410653170159616"
+                    ],
+                    "created_at": "2022-10-29T17:32:28.000Z",
+                    "public_metrics": {
+                        "retweet_count": 152,
+                        "reply_count": 61,
+                        "like_count": 4487,
+                        "quote_count": 13
+                    },
+                    "id": "1586410653170159616",
+                    "author_id": "3056720847"
+                }
+            ]
+        }
+    },
+    {
+        "data": {
+            "public_metrics": {
+                "retweet_count": 11425,
+                "reply_count": 69,
+                "like_count": 71010,
+                "quote_count": 332
+            },
+            "created_at": "2022-10-29T13:55:55.000Z",
+            "id": "1586356158662672386",
+            "attachments": {
+                "media_keys": [
+                    "3_1586356156007694336"
+                ]
+            },
+            "text": "🐦 https://t.co/A7Hv6M9jG7",
+            "author_id": "873422783119806464",
+            "edit_history_tweet_ids": [
+                "1586356158662672386"
+            ]
+        },
+        "includes": {
+            "media": [
+                {
+                    "media_key": "3_1586356156007694336",
+                    "type": "photo",
+                    "url": "https://pbs.twimg.com/media/FgPehN4XwAAy_PX.jpg"
+                }
+            ],
+            "users": [
+                {
+                    "profile_image_url": "https://pbs.twimg.com/profile_images/1374705139299287040/6ed1DLei_normal.jpg",
+                    "description": "he/him, I do Hot Paper Comics. Nothing smart to add to this description.\n\nhttps://t.co/Z7iWYxSD4a",
+                    "name": "Martin 'HotPaper' Rosner",
+                    "username": "HotPaperComics",
+                    "id": "873422783119806464"
+                }
+            ]
+        }
+    }
+]

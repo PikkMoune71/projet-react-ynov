@@ -1,0 +1,38 @@
+.contentContainer {
+    padding: 10px 0;
+
+    .paragraph {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+
+        .w-50{
+            width: 50%;
+            img {
+                max-width: 99%;
+                height: auto;
+                text-align: center;
+                max-height: 400px;
+            }
+        }
+
+        .w-100{
+            width: 100%;
+            img {
+                max-width: 99%;
+                height: auto;
+                text-align: center;
+                max-height: 400px;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.containerToolsbar{
+    opacity: .5;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    padding: 5px 20px;
+    background-color: rgb(29, 39, 52);
+    border: 1px solid hsla(0, 0%, 70%, .23);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s all;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    .content-save{
+        border-left: 1px solid hsla(0deg, 0%, 70%, 0.23);
+        margin-left: 15px;
+    }
+}

@@ -74,6 +74,22 @@ Notre principale difficulté a été l'envoie de cette requête avec React. Nous
 
 Par la suite, le professeur nous a expliqué que l'erreur venait en réalité du fait que l'API Twitter n'accepte pas les requêtes provenant d'un navigateur Web. Il faut donc forcément utiliser un back pour réaliser cette action. Le professeur nous a donc fourni un back développé avec Node JS + Express pour envoyer nos requêtes.
 
+Voici comment nous avons implémenté le service permettant de contacter les différentes API (cette méthode permet de rajouter simplement une connexion à une nouvelle API) : 
+
+![Récupération d'un post commune à toutes les API ](documentation/images/get-post.png)
+
+Cette méthode est commune à tous les services permettant de contacter les API. Elle utilise des méthodes abstraites qui seront implémentées dans les classes filles.
+
+![Map response de l'API Twitter](documentation/images/map-response.png)
+
+MapResponse permet la suppression des liens raccourcis présents dans les posts Twitter (lorsqu'un utilisateur joint un média à son tweet, le lien raccourci est présent au format texte. Nous ne voulons pas qu'il apparaisse sur le tweet car nous récupérons déjà le média dans un autre champ de la réponse à la requête).
+Dans un second temps, la méthode appelle récursivement "getPost" afin de récupérer les tweets cités au sein du tweet.
+
+![Nouvelle version du Contexte](documentation/images/code-app-js.png)
+
+Pour finir, nous instancions ce service ou le stub dans App.js. Deux states sont utilisés. L'un permet de stocker l'id du tweet extrait de l'url soumise par l'utilisateur. Lorsque ce state change, le useEffect permettant d'appeler "getPost" est appelé et le second state permettant de stocker le tweet est modifié. Par la suite, ce state est envoyé aux différents composants de l'application grâce aux paramètres.
+
+
 ### Mise en place d'un contexte global pour la gestion du mode sombre des Tweets
 
 Nous souhaitions mettre en place un thème sombre pour que les tweets apparaissent avec des couleurs claires ou sombres. Pour faire cela, nous avions besoin que l'état du thème soit connus dans de nombreux coposants à la fois. Nous nous sommes donc dirigés vers l'utilisation d'un contexte global. Voici son implémentation : 
